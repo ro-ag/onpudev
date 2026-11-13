@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brano Help</title>
+  <meta name="description" content="How to use Brano: the score views, playback, the ABC source editor, instruments and effects, Perform, the Maestro AI assistant, low-cost AI providers and export.">
+  <meta name="theme-color" content="#111820">
+  <meta property="og:title" content="Brano Help">
+  <meta property="og:description" content="How to use Brano: score views, playback, ABC source, instruments, Maestro and export.">
+  <meta property="og:image" content="https://onpu.dev/brano/img/brano-hero.webp">
+  <meta property="og:url" content="https://onpu.dev/brano/help/">
+  <link rel="alternate" hreflang="en" href="https://onpu.dev/brano/help/">
+  <link rel="alternate" hreflang="es" href="https://onpu.dev/brano/es/help/">
+  <link rel="icon" type="image/svg+xml" href="../img/brano-icon.svg">
+  <link rel="stylesheet" href="../brano.css">
+  <link rel="stylesheet" href="help.css">
+</head>
+<body>
+  <header class="help-head">
+    <div class="wrap">
+      <nav class="nav">
+        <a href="../"><img src="../img/brano-lockup.svg" width="125" height="32" alt="Brano"></a>
+        <ul>
+          <li class="opt"><a href="../">Product</a></li>
+          <li class="opt"><a href="../#download">Download</a></li>
+          <li><a href="../es/help/" hreflang="es">Español</a></li>
+        </ul>
+      </nav>
+      <div class="title">
+        <h1>Brano Help</h1>
+        <p>Everything you need to read, play, edit and export a score in Brano, and to set up Maestro, the built-in AI assistant. Written for Brano 0.7 (beta).</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap layout">
+    <nav class="toc" aria-label="Contents">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#start">Getting started</a></li>
+        <li><a href="#window">The window</a></li>
+        <li><a href="#playback">Playback</a></li>
+        <li><a href="#source">Editing the score</a></li>
+        <li><a href="#files">Files and sessions</a></li>
+        <li><a href="#instruments">Instruments and effects</a></li>
+        <li><a href="#perform">Perform</a></li>
+        <li><a href="#maestro">Maestro</a></li>
+        <li><a href="#providers">Low-cost AI providers</a></li>
+        <li><a href="#export">Export</a></li>
+        <li><a href="#shortcuts">Keyboard and mouse</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#trouble">Troubleshooting</a></li>
+      </ol>
+    </nav>
+
+    <main class="doc">
+      <section id="start">
+        <h2>Getting started</h2>
+        <p>Brano is a score-first music workstation. The music is written as <strong>ABC notation</strong>, a plain-text format. Brano engraves that text as a page and as DAW-style lanes, plays it with expressive phrasing, and lets you discuss or change it with Maestro.</p>
+        <h3>Install</h3>
+        <ul>
+          <li><strong>Windows 10 and 11:</strong> install from the <a href="https://apps.microsoft.com/detail/9n48c2ch9b61">Microsoft Store</a>.</li>
+          <li><strong>macOS 12 or newer (Apple Silicon):</strong> download the DMG from the <a href="https://github.com/ro-ag/brano/releases">releases page</a> and drag Brano to Applications.</li>
+          <li><strong>Linux x64:</strong> download the <code>.tar.gz</code> from the releases page, unpack it and run <code>brano</code>. It needs glibc 2.35 or newer and ALSA; there is nothing to install.</li>
+        </ul>
+        <h3>First five minutes</h3>
+        <ol>
+          <li>Open Brano. It starts with a bundled score, Fauré's "Après un rêve", so there is something to play straight away.</li>
+          <li>Press <kbd>Space</kbd> to play. Press it again to pause.</li>
+          <li>Click the <span class="ui">Page</span> and <span class="ui">Studio</span> tabs above the score to switch between the engraved page and the lanes.</li>
+          <li>Open your own music with <span class="ui">File ▸ Open…</span>. Brano reads <code>.abc</code>, MusicXML (<code>.xml</code>, <code>.musicxml</code>, <code>.mxl</code>) and its own <code>.brn</code> sessions.</li>
+          <li>Save with <span class="ui">File ▸ Save</span>. A session is one <code>.brn</code> file that holds the score, the mix, your instruments and the Maestro conversations.</li>
+        </ol>
+        <div class="note info"><p>No account is needed and nothing is uploaded. Brano has no analytics or telemetry. The only network traffic is what you set up yourself for Maestro.</p></div>
+      </section>
+
+      <section id="window">
+        <h2>The window</h2>
+        <p>The score sits in the centre. Around it are three zones you can show or hide: left, lower and right.</p>
+        <figure class="clip">
+          <video src="media/views.mp4" poster="media/views.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>Switching between Page and Studio. The left zone follows the view.</figcaption>
+        </figure>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Area</th><th>What it holds</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Page</strong> (centre)</td><td>The engraved score on paper, ready to print or export.</td></tr>
+            <tr><td><strong>Studio</strong> (centre)</td><td>One engraved lane per part on a timeline with a bar ruler and playhead.</td></tr>
+            <tr><td><strong>Parts</strong> (left, in Studio)</td><td>A header per part: instrument, MIDI channel, mute, solo and freeze.</td></tr>
+            <tr><td><strong>Properties</strong> (left, in Page)</td><td>Paper size, page breaks, notation size, zoom mode and the page number.</td></tr>
+            <tr><td><strong>Mixer</strong> (lower)</td><td>A strip per part plus the master: effects, pan, mute, solo, freeze and level.</td></tr>
+            <tr><td><strong>Perform</strong> (lower)</td><td>How expressively Brano plays the score.</td></tr>
+            <tr><td><strong>Source</strong> (lower)</td><td>The ABC text editor, diagnostics and history.</td></tr>
+            <tr><td><strong>Maestro</strong> (right)</td><td>The AI assistant chat.</td></tr>
+          </tbody>
+        </table></div>
+        <ul>
+          <li>Show or hide a pane with <span class="ui">View ▸ Panels</span>, or collapse a whole zone with the three small buttons at the right end of the Seek row.</li>
+          <li>Parts belongs to Studio and Properties belongs to Page, so each one is locked while the other view is active.</li>
+          <li><span class="ui">View ▸ Maestro in Separate Window</span> moves the chat to its own window, which is handy on a second display.</li>
+          <li><span class="ui">View ▸ Reset Layout</span> puts everything back.</li>
+        </ul>
+        <p>On Windows and Linux the menus are in the title bar of the window. On macOS they are in the system menu bar.</p>
+      </section>
+
+      <section id="playback">
+        <h2>Playback</h2>
+        <figure class="clip">
+          <video src="media/play.mp4" poster="media/play.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>Space starts playback. The playhead, the Beats counter and the meters follow.</figcaption>
+        </figure>
+        <p>The transport is at the top of the window. From left to right: return to start, play/pause, stop, loop and metronome, followed by the display.</p>
+        <ul>
+          <li><strong>Play/pause:</strong> <kbd>Space</kbd>, unless you are typing in a text field.</li>
+          <li><strong>Stop</strong> rewinds to bar 1. <strong>Return to start</strong> rewinds without changing whether it is playing.</li>
+          <li><strong>Seek:</strong> drag the Seek bar, or click anywhere on the Studio ruler or lanes.</li>
+          <li><strong>Tempo:</strong> click the Tempo number and type a value from 20 to 300, or drag it up and down. Double-click it to go back to the tempo written in the score.</li>
+          <li><strong>Metronome:</strong> click to switch it on. Right-click it to set the click level.</li>
+          <li><strong>Master:</strong> drag the fader. Double-click resets it.</li>
+        </ul>
+        <div class="note"><p>The transport tempo only changes what you hear. It never edits the score, and exported notation and MIDI keep the written tempo. The metronome is for monitoring only; it is never part of a freeze or an audio export.</p></div>
+        <p>The three dots at the top right show the state of the <strong>Source</strong> (valid, modified or invalid), the <strong>Audio</strong> output and <strong>Maestro</strong>.</p>
+      </section>
+
+      <section id="source">
+        <h2>Editing the score</h2>
+        <p>ABC is the single source of truth. Every change to the music is a change to the text in the <span class="ui">Source</span> pane, whether you type it or Maestro makes it for you.</p>
+        <figure class="clip">
+          <video src="media/source.mp4" poster="media/source.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>The Source pane: Editor, Diagnostics, History and the read-only XML view.</figcaption>
+        </figure>
+        <h3>Edit and apply</h3>
+        <ol>
+          <li>Show the pane with <span class="ui">View ▸ Panels ▸ Source</span> and stay on the <span class="ui">Editor</span> tab, <span class="ui">ABC</span> view.</li>
+          <li>Stop playback. The source cannot be edited while the score is playing.</li>
+          <li>Type your change. The status chip turns to <span class="ui">Modified</span>.</li>
+          <li>Press <span class="ui">Apply</span>, or <kbd>⌘ Enter</kbd> on macOS and <kbd>Ctrl Enter</kbd> on Windows and Linux. Brano compiles the text and redraws the score.</li>
+        </ol>
+        <p>Edits are not compiled as you type, so a half-written bar never breaks the score you are looking at.</p>
+        <h3>When something is wrong</h3>
+        <p>If the text does not compile, the chip shows <span class="ui">Invalid</span> and the <span class="ui">Diagnostics</span> tab lists each problem. Click a row to jump to that line in the editor. The score keeps showing the last version that compiled.</p>
+        <h3>History</h3>
+        <p>The <span class="ui">History</span> tab lists earlier revisions, recorded each time the session is saved. <span class="ui">Restore</span> replaces the source with that revision; the text you leave stays in the history, so restoring is never destructive. Right-click a row to copy its text.</p>
+        <h3>New to ABC?</h3>
+        <p>A tune starts with a few header lines (<code>T:</code> title, <code>M:</code> metre, <code>L:</code> default note length, <code>K:</code> key), followed by the notes. <code>C D E F</code> are notes, <code>c d e f</code> the octave above, <code>z</code> a rest, <code>|</code> a bar line, and a number after a note multiplies its length. <span class="ui">File ▸ New</span> gives you a minimal tune to start from, and the <a href="https://abcnotation.com/learn">ABC notation site</a> has tutorials. Maestro can also write or explain ABC for you.</p>
+      </section>
+
+      <section id="files">
+        <h2>Files and sessions</h2>
+        <ul>
+          <li><span class="ui">File ▸ Open…</span> accepts <code>.brn</code>, <code>.abc</code>, <code>.xml</code>, <code>.musicxml</code> and <code>.mxl</code>. There is no separate import command: opening an ABC or MusicXML file imports it. MusicXML is converted to editable ABC where possible. The original file is never modified.</li>
+          <li><span class="ui">File ▸ Save</span> and <span class="ui">Save As…</span> write a <code>.brn</code> session: the source and its history, instruments, effects, mixer, Perform settings, tempo override and Maestro conversations.</li>
+          <li><span class="ui">File ▸ Open Recent</span> keeps the last ten files.</li>
+          <li>There is no autosave. A dot next to the logo marks unsaved changes, and Brano asks before closing a session that has them.</li>
+        </ul>
+      </section>
+
+      <section id="instruments">
+        <h2>Instruments and effects</h2>
+        <p>Every part starts on a built-in General MIDI sound, so a new score plays without any setup. You can replace any part with a plug-in instrument.</p>
+        <h3>Choose an instrument</h3>
+        <ol>
+          <li>Open <span class="ui">View ▸ Instruments…</span>, or click the sound-source button on a part's header in Studio.</li>
+          <li>Open the menu for the part, search, and pick a General MIDI program or a plug-in.</li>
+          <li>Use <span class="ui">Open native editor</span> to open the plug-in's own window and choose a sound there.</li>
+        </ol>
+        <p>Brano hosts <strong>VST3</strong> instruments on every platform and <strong>Audio Units (AUv2)</strong> on macOS. The first time, run <span class="ui">Scan plug-ins</span> in <span class="ui">Settings ▸ Plug-ins</span>. The same page lets you hide plug-ins from the pickers and, on macOS, choose the preferred format when a product is installed as both.</p>
+        <div class="note info"><p>Each plug-in runs in its own process. If one crashes, the part shows a fault with a retry button and the rest of the session keeps running.</p></div>
+        <h3>Effects</h3>
+        <p>In the Mixer, click <span class="ui">+ FX</span> on a part or on the master to manage its effect chain: add, reorder, bypass, remove, or open an effect's editor. Part effects come before the part's volume and pan. Master effects come after the master volume.</p>
+        <h3>Freeze</h3>
+        <p>The snowflake button on a part renders it to audio once and plays that render, which saves CPU with heavy instruments. Click it again to return to the live instrument. <span class="ui">Freeze All</span> on the master strip does every eligible part.</p>
+        <h3>Banks</h3>
+        <p>A bank lets one multitimbral plug-in (Kontakt, EastWest Opus, HALion, ARIA Player) play several parts, each on its own MIDI channel. Set it up in <span class="ui">View ▸ Banks…</span> with <span class="ui">Group into bank…</span>. Brano cannot see inside the plug-in, so set each instrument's MIDI channel there to match the channel table in the dialog.</p>
+        <h3>Audio output</h3>
+        <p><span class="ui">Settings ▸ Audio</span> chooses the output device, sample rate, channels and buffer size. If the status dot says <span class="ui">No Audio</span>, the saved device is probably disconnected: pick <span class="ui">Automatic (system default)</span> and apply.</p>
+      </section>
+
+      <section id="perform">
+        <h2>Perform</h2>
+        <p>Brano does not play the notes mechanically. The <span class="ui">Perform</span> tab decides how much interpretation is added on top of what is written.</p>
+        <figure class="clip">
+          <video src="media/perform.mp4" poster="media/perform.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>Choosing a style and turning Expression down.</figcaption>
+        </figure>
+        <ul>
+          <li><strong>Style:</strong> Default, Medieval, Renaissance, Baroque, Classical, Romantic, Pop / Rock, Jazz / Swing and AI Pianist. AI Pianist needs an optional add-on from <span class="ui">Settings ▸ Add-ons</span>; until it is installed it plays like Default.</li>
+          <li><strong>Feel:</strong> <span class="ui">Expression</span> goes from 0% (the notes exactly as written) to 100% (the full style). <span class="ui">Swing amount</span> sets how far off-beats are delayed. <span class="ui">Style preset</span> puts both back to 100%.</li>
+          <li><strong>Interpretation:</strong> switch Dynamics, Accents, Articulation, Pedal and Jitter on or off.</li>
+          <li><strong>Timing &amp; phrasing:</strong> Ritardando, Phrase arch, Micro-timing and Swing feel.</li>
+        </ul>
+        <p>Hover over any control for a one-line description. These settings are saved in the session, and MIDI export can use them (<span class="ui">Humanized</span>) or ignore them (<span class="ui">Flat</span>).</p>
+      </section>
+
+      <section id="maestro">
+        <h2>Maestro</h2>
+        <p>Maestro is the AI assistant in the right-hand pane. It reads the notation itself, so it can explain the harmony, check voice leading, review the score before you export, and make changes to the ABC when you ask.</p>
+        <p>Maestro is <strong>off until you connect it to an AI provider</strong>. Brano does not include a model and does not sell AI usage: you bring your own API key, or run a model on your own computer.</p>
+        <h3>Set it up</h3>
+        <figure class="clip">
+          <video src="media/maestro.mp4" poster="media/maestro.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>Settings ▸ Maestro: pick a provider and the address and model are filled in for you.</figcaption>
+        </figure>
+        <ol>
+          <li>Open <span class="ui">Settings…</span> (<kbd>⌘ ,</kbd> or <kbd>Ctrl ,</kbd>) and choose <span class="ui">Maestro</span>. Clicking the provider badge at the top of the Maestro pane goes to the same place.</li>
+          <li>Under <span class="ui">Backend</span> choose <span class="ui">OpenAI-compatible</span>, or <span class="ui">Anthropic</span> if you have a Claude API key.</li>
+          <li>Pick a <span class="ui">Provider</span>. The address and a recommended model are filled in. See <a href="#providers">low-cost AI providers</a> for which one to choose.</li>
+          <li>Click <span class="ui">Get an API key →</span>. It opens the provider's page where you create a key. Copy the key and paste it into <span class="ui">API key</span>.</li>
+          <li>Press <span class="ui">Test</span> to send a short request, then <span class="ui">Apply</span>.</li>
+        </ol>
+        <p>The status line in the Maestro pane should now read "Listening to your score". If it shows "Check Maestro configuration", press <span class="ui">Details</span> to read the provider's message and <span class="ui">Configure</span> to go back to the settings.</p>
+        <h3>Ask</h3>
+        <p>Type in <span class="ui">Ask Maestro…</span> and press <kbd>Enter</kbd> (<kbd>Shift Enter</kbd> for a new line). Some things to try:</p>
+        <ul>
+          <li>"Explain the harmony of bars 1 to 8."</li>
+          <li>"Check the voice leading between the voice and the piano left hand."</li>
+          <li>"Review the score before I export it."</li>
+          <li>"Transpose the whole piece down a major second."</li>
+          <li>"Add a four-bar introduction for the piano."</li>
+        </ul>
+        <p>Maestro replies in the language of the interface unless you choose otherwise in <span class="ui">Reply language</span>. Lyrics, titles and ABC are never translated.</p>
+        <h3>When Maestro changes the score</h3>
+        <p>Maestro edits the ABC through checked tools: each change must compile before it is accepted. The reply shows a diff of what changed with two buttons: <span class="ui">Keep</span> and <span class="ui">Roll back</span>. Every earlier version is also in <span class="ui">Source ▸ History</span>. Maestro changes instruments or proposes bank wiring only when you ask, and wiring changes wait for your approval.</p>
+        <h3>Options worth knowing</h3>
+        <ul>
+          <li><strong>Web search</strong> and <strong>Image input</strong> are off by default and only available with providers that support them. With image input on, paste or drop a PNG or JPEG into the prompt, for example a photo of a printed score.</li>
+          <li><strong>Session budget:</strong> tick <span class="ui">Limit spend</span> to stop sending requests once a session has cost a set amount.</li>
+          <li><strong>Refresh models</strong> asks the provider for its current model list. <span class="ui">Custom model id…</span> lets you type a model that is not listed.</li>
+          <li><strong>Chats</strong> in the Maestro header starts a new conversation or returns to an earlier one. Conversations are saved in the session file.</li>
+        </ul>
+        <h3>Privacy and your key</h3>
+        <ul>
+          <li>When you send a message, the score's ABC and your conversation go to the provider you chose, and nowhere else. Nothing is sent while Maestro is idle or not configured.</li>
+          <li>To keep everything on your computer, use the <span class="ui">Ollama (local, keyless)</span> provider.</li>
+          <li>Your API key is stored on your computer in Brano's settings folder, in the file <code>maestro.json</code>, as plain text. Treat that file like a password: do not share it, and if a key leaks, revoke it on the provider's site.</li>
+        </ul>
+      </section>
+
+      <section id="providers">
+        <h2>Low-cost AI providers</h2>
+        <p>Maestro works with any of the providers below. A typical question about a score costs a fraction of a cent with the inexpensive models, and several providers have a free tier that is enough to try Maestro.</p>
+        <p>Maestro needs a model that supports <strong>tool calling</strong> and <strong>streaming</strong>. A large context window helps with long scores. The models suggested by each preset meet those requirements.</p>
+        <div class="note"><p>Prices are in US dollars per million tokens (input / output) as published in November 2026. They change often, and free tiers come with rate limits. Always check the provider's own pricing page, linked in the table. Brano has no commercial relationship with any of these providers.</p></div>
+
+        <h3>Pay as you go</h3>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Provider</th><th>Model in Brano</th><th>Price in / out</th><th>Links</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Moonshot AI (Kimi)</strong><br><span class="tag pick">Best results</span></td>
+              <td>Kimi K3, 1M context</td>
+              <td class="num">about $3 / $15</td>
+              <td><a href="https://platform.kimi.ai/console/api-keys">Get a key</a> · <a href="https://platform.kimi.ai/docs/pricing">Pricing</a></td>
+            </tr>
+            <tr>
+              <td><strong>Z.ai (GLM)</strong><br><span class="tag pick">Best value</span></td>
+              <td>GLM-5.3-Flash, 1M context<br>GLM-5.3 (flagship)</td>
+              <td class="num">$0.15 / $0.50<br>$1.40 / $4.40</td>
+              <td><a href="https://z.ai/manage-apikey/apikey-list">Get a key</a> · <a href="https://docs.z.ai/guides/overview/pricing">Pricing</a></td>
+            </tr>
+            <tr>
+              <td><strong>Xiaomi MiMo</strong></td>
+              <td>MiMo-V2.6-Flash, 1M context<br>MiMo-V2.6-Pro (flagship)</td>
+              <td class="num">about $0.14 / $0.28<br>about $0.44 / $0.87</td>
+              <td><a href="https://platform.xiaomimimo.com/#/console/api-keys">Get a key</a> · <a href="https://mimo.mi.com/docs/en-US/quick-start/summary/model">Models and pricing</a></td>
+            </tr>
+            <tr>
+              <td><strong>DeepSeek</strong><br><span class="tag">Custom endpoint</span></td>
+              <td><code>deepseek-flash</code>, 1M context</td>
+              <td class="num">$0.15 to $0.30 / $0.60 to $1.20<br>(off-peak to peak)</td>
+              <td><a href="https://platform.deepseek.com/api_keys">Get a key</a> · <a href="https://api-docs.deepseek.com/quick_start/pricing">Pricing</a></td>
+            </tr>
+            <tr>
+              <td><strong>OpenRouter</strong></td>
+              <td>Kimi K3 by default; hundreds of others with one key</td>
+              <td class="num">per model</td>
+              <td><a href="https://openrouter.ai/keys">Get a key</a> · <a href="https://openrouter.ai/models">Models and prices</a></td>
+            </tr>
+          </tbody>
+        </table></div>
+        <ul>
+          <li><strong>Kimi K3</strong> gives very good answers about music and reads a whole long score at once. It is also the most expensive on this list. Use it when the quality of the analysis matters.</li>
+          <li><strong>GLM-5.3-Flash</strong> and <strong>MiMo-V2.6-Flash</strong> cost roughly twenty to fifty times less per token than Kimi K3 and are good enough for everyday questions and small edits.</li>
+          <li><strong>DeepSeek</strong> has no preset, so it is not a combination we test with every release. Choose <span class="ui">Custom endpoint</span>, set <span class="ui">Base URL</span> to <code>https://api.deepseek.com</code>, paste your key and type the model id <code>deepseek-flash</code>. Any other OpenAI-compatible service can be connected the same way.</li>
+          <li>With Xiaomi MiMo, use a pay-as-you-go API key (it starts with <code>sk-</code>).</li>
+        </ul>
+
+        <h3>Free to start</h3>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Provider</th><th>Model in Brano</th><th>What is free</th><th>Links</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Groq</strong> <span class="tag free">Free tier</span></td>
+              <td>GPT-OSS 120B, 128K context</td>
+              <td>Rate-limited free use, no card. Paid use about $0.15 / $0.60.</td>
+              <td><a href="https://console.groq.com/keys">Get a key</a> · <a href="https://console.groq.com/docs/rate-limits">Limits</a></td>
+            </tr>
+            <tr>
+              <td><strong>Cerebras</strong> <span class="tag free">Free tier</span></td>
+              <td>GPT-OSS 120B, 128K context</td>
+              <td>A free token allowance. Very fast replies.</td>
+              <td><a href="https://cloud.cerebras.ai">Get a key</a> · <a href="https://inference-docs.cerebras.ai/support/rate-limits">Limits</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google Gemini</strong> <span class="tag free">Free tier</span></td>
+              <td>Gemini 3.8 Flash, 1M context</td>
+              <td>Free use of the Flash models within limits shown in AI Studio.</td>
+              <td><a href="https://aistudio.google.com/apikey">Get a key</a> · <a href="https://ai.google.dev/gemini-api/docs/pricing">Pricing</a></td>
+            </tr>
+            <tr>
+              <td><strong>Mistral</strong> <span class="tag free">Free tier</span></td>
+              <td>Mistral Large 3, 256K context</td>
+              <td>A free mode for testing, with low rate limits.</td>
+              <td><a href="https://console.mistral.ai/api-keys">Get a key</a> · <a href="https://mistral.ai/pricing">Pricing</a></td>
+            </tr>
+            <tr>
+              <td><strong>OpenRouter</strong> <span class="tag free">Free models</span></td>
+              <td>Any model whose id ends in <code>:free</code></td>
+              <td>A daily number of free requests; more after a first top-up.</td>
+              <td><a href="https://openrouter.ai/keys">Get a key</a> · <a href="https://openrouter.ai/models?max_price=0">Free models</a></td>
+            </tr>
+            <tr>
+              <td><strong>Ollama</strong> <span class="tag free">Local</span></td>
+              <td>Llama 3.3 or any model you pull</td>
+              <td>Everything. Runs on your computer; no key, no account, nothing leaves the machine. Needs a capable GPU or Apple Silicon and plenty of memory.</td>
+              <td><a href="https://ollama.com/download">Download</a></td>
+            </tr>
+          </tbody>
+        </table></div>
+        <div class="note info"><p>Some free tiers may use your prompts to improve their models. If your score is unpublished work, read the provider's data policy first, use a paid tier, or run a local model with Ollama.</p></div>
+        <h3>Keeping the bill small</h3>
+        <ul>
+          <li>Tick <span class="ui">Limit spend</span> under <span class="ui">Session budget</span>. Requests stop when the session reaches the amount.</li>
+          <li>Start a <span class="ui">New chat</span> for a new topic. A long conversation is sent again with every message.</li>
+          <li>Use a Flash model for everyday questions and switch to a flagship model for a full review.</li>
+          <li>Where a <span class="ui">Thinking</span> switch is shown, turning it off makes replies faster and cheaper.</li>
+          <li>Leave <span class="ui">Web search</span> off unless you need it; providers charge for each search.</li>
+        </ul>
+      </section>
+
+      <section id="export">
+        <h2>Export</h2>
+        <figure class="clip">
+          <video src="media/export.mp4" poster="media/export.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>File ▸ Export… and the format list. Each format shows its own options.</figcaption>
+        </figure>
+        <p>Open <span class="ui">File ▸ Export…</span> (<kbd>⌘ E</kbd> or <kbd>Ctrl E</kbd>), choose a format, press <span class="ui">Export…</span> and pick where to save.</p>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Format</th><th>What you get</th></tr></thead>
+          <tbody>
+            <tr><td><strong>PDF</strong></td><td>One multi-page PDF of the engraved score.</td></tr>
+            <tr><td><strong>SVG</strong></td><td>One SVG per page. Multi-page scores are saved as a .zip.</td></tr>
+            <tr><td><strong>PNG</strong></td><td>Page images at 1×, 2× or 3×. Multi-page scores are saved as a .zip.</td></tr>
+            <tr><td><strong>TIFF</strong></td><td>The current page, or all pages in one multi-page TIFF, at 1×, 2× or 3×.</td></tr>
+            <tr><td><strong>MusicXML</strong></td><td>The compiled score, for other notation programs.</td></tr>
+            <tr><td><strong>ABC</strong></td><td>The current source text.</td></tr>
+            <tr><td><strong>MIDI</strong></td><td>Humanized (with the current Perform settings) or Flat (exactly as written).</td></tr>
+            <tr><td><strong>WAV, FLAC</strong></td><td>An audio bounce at 44.1 kHz, 16-bit stereo: one mixed file, or stems with one file per part.</td></tr>
+          </tbody>
+        </table></div>
+        <p>Audio follows your instruments, effects and mixer. Stems keep each part's level and pan, ignore mute and solo, and leave out the master effects. Paper size, page breaks and notation size for the page formats are set in <span class="ui">Properties</span> in the Page view.</p>
+      </section>
+
+      <section id="shortcuts">
+        <h2>Keyboard and mouse</h2>
+        <p>On Windows and Linux use <kbd>Ctrl</kbd> where the table says <kbd>⌘</kbd>.</p>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Action</th><th>Shortcut</th></tr></thead>
+          <tbody>
+            <tr><td>Play / pause</td><td><kbd>Space</kbd></td></tr>
+            <tr><td>Apply source edits</td><td><kbd>⌘ Enter</kbd></td></tr>
+            <tr><td>Send to Maestro / new line</td><td><kbd>Enter</kbd> / <kbd>Shift Enter</kbd></td></tr>
+            <tr><td>New, Open</td><td><kbd>⌘ N</kbd>, <kbd>⌘ O</kbd></td></tr>
+            <tr><td>Save, Save As</td><td><kbd>⌘ S</kbd>, <kbd>Shift ⌘ S</kbd></td></tr>
+            <tr><td>Export</td><td><kbd>⌘ E</kbd></td></tr>
+            <tr><td>Settings</td><td><kbd>⌘ ,</kbd></td></tr>
+            <tr><td>Zoom in, zoom out, actual size</td><td><kbd>⌘ =</kbd>, <kbd>⌘ -</kbd>, <kbd>⌘ 0</kbd></td></tr>
+            <tr><td>Close window (macOS)</td><td><kbd>⌘ W</kbd></td></tr>
+          </tbody>
+        </table></div>
+        <h3>In the Studio view</h3>
+        <ul>
+          <li>Click the ruler or a lane to move the playhead.</li>
+          <li><kbd>⌘</kbd> + wheel, or pinch on a trackpad, zooms, keeping your place in the music.</li>
+          <li>Wheel scrolls vertically; <kbd>Shift</kbd> + wheel scrolls horizontally. Two fingers pan on a trackpad.</li>
+          <li>Right-click the score for zoom, actual size and <span class="ui">Fit height</span>.</li>
+          <li>Right-click a part for mute, solo and freeze.</li>
+        </ul>
+        <h3>In the Page view</h3>
+        <ul>
+          <li>Scroll or drag to move around the page.</li>
+          <li>Zoom with the View menu, or set <span class="ui">Fit width</span> or <span class="ui">Fit page</span> in Properties.</li>
+        </ul>
+      </section>
+
+      <section id="settings">
+        <h2>Settings</h2>
+        <p><span class="ui">Settings…</span> has five pages: General, Audio, Plug-ins, Maestro and Add-ons.</p>
+        <ul>
+          <li><strong>Theme:</strong> Studio Dark, Graphite and Midnight are dark; Yelcho and Platinum are light. Also in <span class="ui">View ▸ Theme</span>.</li>
+          <li><strong>Language:</strong> English or Español. Also in <span class="ui">View ▸ Language</span>.</li>
+          <li><strong>Reduce motion</strong> stops pulses and fades.</li>
+          <li><strong>Show engine diagnostics</strong> adds technical details to the status bar, useful when reporting a problem.</li>
+        </ul>
+        <h3>Where Brano keeps its settings</h3>
+        <div class="tablewrap"><table>
+          <thead><tr><th>System</th><th>Folder</th></tr></thead>
+          <tbody>
+            <tr><td>macOS</td><td><code>~/Library/Application Support/brano</code></td></tr>
+            <tr><td>Windows</td><td><code>%APPDATA%\brano</code></td></tr>
+            <tr><td>Linux</td><td><code>~/.config/brano</code></td></tr>
+          </tbody>
+        </table></div>
+        <p>The folder holds small JSON files such as <code>ui.json</code> (theme and language), <code>layout.json</code> (panes), <code>audio.json</code> and <code>maestro.json</code> (provider, model and API key). Your music is not stored there: it lives in the <code>.brn</code> files you save.</p>
+      </section>
+
+      <section id="trouble">
+        <h2>Troubleshooting</h2>
+        <h3>There is no sound</h3>
+        <ul>
+          <li>Look at the Audio dot at the top right. If it says <span class="ui">No Audio</span>, open <span class="ui">Settings ▸ Audio</span>, choose <span class="ui">Automatic (system default)</span> or a connected device, and apply.</li>
+          <li>Check the Master fader, and that no part is muted while another is soloed.</li>
+          <li>A plug-in instrument can load without a sound selected. Open its editor and load one. Brano reports a silent part rather than replacing it with a General MIDI sound.</li>
+        </ul>
+        <h3>A plug-in is missing or keeps failing</h3>
+        <ul>
+          <li>Run <span class="ui">Rescan</span> in <span class="ui">Settings ▸ Plug-ins</span>. Plug-ins that failed the scan are listed under "Skipped or incompatible" and can be retried.</li>
+          <li>A faulted part or effect shows a retry button. The rest of the session is not affected.</li>
+        </ul>
+        <h3>Maestro does not answer</h3>
+        <ul>
+          <li>"Check Maestro configuration": no provider is set up yet, or the key was rejected. Press <span class="ui">Configure</span> and follow <a href="#maestro">Set it up</a>.</li>
+          <li>"Reply failed": press <span class="ui">Details</span> for the provider's message. The usual causes are an expired key, no credit left, a free-tier rate limit, or a model name the provider has retired. <span class="ui">Refresh models</span> fetches the current list.</li>
+          <li>With Ollama, make sure the Ollama app is running and that you have pulled the model named in the settings.</li>
+        </ul>
+        <h3>My edit will not apply</h3>
+        <ul>
+          <li>Stop playback first, and make sure the Source pane is on the <span class="ui">ABC</span> view. The XML view is read-only.</li>
+          <li>If the chip says <span class="ui">Invalid</span>, open <span class="ui">Diagnostics</span> and fix the listed lines.</li>
+        </ul>
+        <h3>Still stuck?</h3>
+        <p>Write to <a href="mailto:support@onpu.dev">support@onpu.dev</a> with your operating system, the Brano version from the About window, and what you were doing. Release notes are on the <a href="https://github.com/ro-ag/brano/releases">releases page</a>.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Onpu. Brano is a trademark of its author. VST is a trademark of Steinberg Media Technologies GmbH. Other product names belong to their owners.</span>
+      <span><a href="mailto:support@onpu.dev">Support</a> · <a href="https://onpu.dev/privacy.html">Privacy policy</a> · <a href="../">Brano</a> · <a href="https://onpu.dev/">Onpu</a></span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -5,6 +5,7 @@ Served by GitHub Pages from the `main` branch at https://onpu.dev.
 
 - `index.html` landing page
 - `brano/` Brano product page (`index.html` English, `es/index.html` Spanish, `brano.css`, `img/` screenshots captured from the Windows build)
+- `brano/help/` Brano help (`index.html` English, `help.css`, `media/` screen recordings as MP4 with WebP posters); Spanish at `brano/es/help/index.html`, sharing the same CSS and media
 - `privacy.html` privacy policy referenced from the Microsoft Store listing
 - `CNAME` custom domain for GitHub Pages
 

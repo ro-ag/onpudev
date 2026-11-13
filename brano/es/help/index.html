@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayuda de Brano</title>
+  <meta name="description" content="Cómo usar Brano: las vistas de la partitura, la reproducción, el editor de código ABC, instrumentos y efectos, Interpretar, el asistente de IA Maestro, proveedores de IA económicos y la exportación.">
+  <meta name="theme-color" content="#111820">
+  <meta property="og:title" content="Ayuda de Brano">
+  <meta property="og:description" content="Cómo usar Brano: vistas de la partitura, reproducción, código ABC, instrumentos, Maestro y exportación.">
+  <meta property="og:image" content="https://onpu.dev/brano/img/brano-hero.webp">
+  <meta property="og:url" content="https://onpu.dev/brano/es/help/">
+  <link rel="alternate" hreflang="en" href="https://onpu.dev/brano/help/">
+  <link rel="alternate" hreflang="es" href="https://onpu.dev/brano/es/help/">
+  <link rel="icon" type="image/svg+xml" href="../../img/brano-icon.svg">
+  <link rel="stylesheet" href="../../brano.css">
+  <link rel="stylesheet" href="../../help/help.css">
+</head>
+<body>
+  <header class="help-head">
+    <div class="wrap">
+      <nav class="nav">
+        <a href="../"><img src="../../img/brano-lockup.svg" width="125" height="32" alt="Brano"></a>
+        <ul>
+          <li class="opt"><a href="../">Producto</a></li>
+          <li class="opt"><a href="../#download">Descargar</a></li>
+          <li><a href="../../help/" hreflang="en">English</a></li>
+        </ul>
+      </nav>
+      <div class="title">
+        <h1>Ayuda de Brano</h1>
+        <p>Todo lo necesario para leer, reproducir, editar y exportar una partitura en Brano, y para configurar Maestro, el asistente de IA integrado. Escrita para Brano 0.7 (beta).</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap layout">
+    <nav class="toc" aria-label="Contenido">
+      <p>Contenido</p>
+      <ol>
+        <li><a href="#start">Primeros pasos</a></li>
+        <li><a href="#window">La ventana</a></li>
+        <li><a href="#playback">Reproducción</a></li>
+        <li><a href="#source">Editar la partitura</a></li>
+        <li><a href="#files">Archivos y sesiones</a></li>
+        <li><a href="#instruments">Instrumentos y efectos</a></li>
+        <li><a href="#perform">Interpretar</a></li>
+        <li><a href="#maestro">Maestro</a></li>
+        <li><a href="#providers">Proveedores de IA económicos</a></li>
+        <li><a href="#export">Exportar</a></li>
+        <li><a href="#shortcuts">Teclado y ratón</a></li>
+        <li><a href="#settings">Ajustes</a></li>
+        <li><a href="#trouble">Solución de problemas</a></li>
+      </ol>
+    </nav>
+
+    <main class="doc">
+      <section id="start">
+        <h2>Primeros pasos</h2>
+        <p>Brano es una estación de trabajo musical que parte de la partitura. La música se escribe en <strong>notación ABC</strong>, un formato de texto plano. Brano graba ese texto como página y como carriles al estilo de un DAW, lo reproduce con fraseo expresivo y te permite comentarlo o modificarlo con Maestro.</p>
+        <div class="note info"><p>Las animaciones de esta página se grabaron con la interfaz en inglés. En el texto, los nombres de menús y botones aparecen como se ven con la interfaz en español.</p></div>
+        <h3>Instalación</h3>
+        <ul>
+          <li><strong>Windows 10 y 11:</strong> instálalo desde <a href="https://apps.microsoft.com/detail/9n48c2ch9b61">Microsoft Store</a>.</li>
+          <li><strong>macOS 12 o posterior (Apple Silicon):</strong> descarga el DMG desde la <a href="https://github.com/ro-ag/brano/releases">página de versiones</a> y arrastra Brano a Aplicaciones.</li>
+          <li><strong>Linux x64:</strong> descarga el <code>.tar.gz</code> desde la página de versiones, descomprímelo y ejecuta <code>brano</code>. Requiere glibc 2.35 o posterior y ALSA; no hay nada que instalar.</li>
+        </ul>
+        <h3>Los primeros cinco minutos</h3>
+        <ol>
+          <li>Abre Brano. Arranca con una partitura incluida, «Après un rêve» de Fauré, para que haya algo que reproducir de inmediato.</li>
+          <li>Pulsa <kbd>Espacio</kbd> para reproducir. Púlsalo de nuevo para pausar.</li>
+          <li>Haz clic en las pestañas <span class="ui">Página</span> y <span class="ui">Estudio</span>, sobre la partitura, para cambiar entre la página grabada y los carriles.</li>
+          <li>Abre tu propia música con <span class="ui">Archivo ▸ Abrir…</span>. Brano lee <code>.abc</code>, MusicXML (<code>.xml</code>, <code>.musicxml</code>, <code>.mxl</code>) y sus propias sesiones <code>.brn</code>.</li>
+          <li>Guarda con <span class="ui">Archivo ▸ Guardar</span>. Una sesión es un único archivo <code>.brn</code> que contiene la partitura, la mezcla, tus instrumentos y las conversaciones con Maestro.</li>
+        </ol>
+        <div class="note info"><p>No hace falta cuenta y no se sube nada a ningún sitio. Brano no tiene analíticas ni telemetría. El único tráfico de red es el que tú configures para Maestro.</p></div>
+      </section>
+
+      <section id="window">
+        <h2>La ventana</h2>
+        <p>La partitura ocupa el centro. A su alrededor hay tres zonas que puedes mostrar u ocultar: izquierda, inferior y derecha.</p>
+        <figure class="clip">
+          <video src="../../help/media/views.mp4" poster="../../help/media/views.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>Cambio entre Página y Estudio. La zona izquierda acompaña a la vista.</figcaption>
+        </figure>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Área</th><th>Qué contiene</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Página</strong> (centro)</td><td>La partitura grabada sobre papel, lista para imprimir o exportar.</td></tr>
+            <tr><td><strong>Estudio</strong> (centro)</td><td>Un carril grabado por parte, sobre una línea de tiempo con regla de compases y cursor de reproducción.</td></tr>
+            <tr><td><strong>Partes</strong> (izquierda, en Estudio)</td><td>Una cabecera por parte: instrumento, canal MIDI, silenciar, solo y congelar.</td></tr>
+            <tr><td><strong>Propiedades</strong> (izquierda, en Página)</td><td>Tamaño de papel, saltos de página, tamaño de notación, modo de zoom y número de página.</td></tr>
+            <tr><td><strong>Mezclador</strong> (inferior)</td><td>Un canal por parte más el máster: efectos, panorama, silenciar, solo, congelar y nivel.</td></tr>
+            <tr><td><strong>Interpretar</strong> (inferior)</td><td>Con cuánta expresividad reproduce Brano la partitura.</td></tr>
+            <tr><td><strong>Código</strong> (inferior)</td><td>El editor de texto ABC, los diagnósticos y el historial.</td></tr>
+            <tr><td><strong>Maestro</strong> (derecha)</td><td>El chat con el asistente de IA.</td></tr>
+          </tbody>
+        </table></div>
+        <ul>
+          <li>Muestra u oculta un panel con <span class="ui">Ver ▸ Paneles</span>, o pliega una zona entera con los tres botones pequeños del extremo derecho de la fila «Avance».</li>
+          <li>Partes pertenece a Estudio y Propiedades pertenece a Página, así que cada uno queda bloqueado mientras la otra vista está activa.</li>
+          <li><span class="ui">Ver ▸ Maestro en ventana aparte</span> lleva el chat a su propia ventana, práctico con una segunda pantalla.</li>
+          <li><span class="ui">Ver ▸ Restablecer disposición</span> lo devuelve todo a su sitio.</li>
+        </ul>
+        <p>En Windows y Linux los menús están en la barra de título de la ventana. En macOS están en la barra de menús del sistema.</p>
+      </section>
+
+      <section id="playback">
+        <h2>Reproducción</h2>
+        <figure class="clip">
+          <video src="../../help/media/play.mp4" poster="../../help/media/play.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>Espacio inicia la reproducción. El cursor, el contador de pulsos y los medidores la siguen.</figcaption>
+        </figure>
+        <p>El transporte está en la parte superior de la ventana. De izquierda a derecha: volver al inicio, reproducir/pausar, detener, bucle y metrónomo, seguidos de la pantalla.</p>
+        <ul>
+          <li><strong>Reproducir/pausar:</strong> <kbd>Espacio</kbd>, salvo que estés escribiendo en un campo de texto.</li>
+          <li><strong>Detener</strong> vuelve al compás 1. <strong>Volver al inicio</strong> rebobina sin cambiar si está sonando o no.</li>
+          <li><strong>Avance:</strong> arrastra la barra «Avance», o haz clic en cualquier punto de la regla o de los carriles de Estudio.</li>
+          <li><strong>Tempo:</strong> haz clic en el número de Tempo y escribe un valor entre 20 y 300, o arrástralo arriba y abajo. Con doble clic vuelve al tempo escrito en la partitura.</li>
+          <li><strong>Metrónomo:</strong> haz clic para activarlo. Con clic derecho ajustas el nivel del clic.</li>
+          <li><strong>Máster:</strong> arrastra el fader. Con doble clic se restablece.</li>
+        </ul>
+        <div class="note"><p>El tempo del transporte solo cambia lo que oyes. Nunca modifica la partitura, y la notación y el MIDI exportados conservan el tempo escrito. El metrónomo es solo para monitorizar: nunca entra en una congelación ni en una exportación de audio.</p></div>
+        <p>Los tres puntos de arriba a la derecha indican el estado del <strong>Código</strong> (válido, modificado o no válido), de la salida de <strong>Audio</strong> y de <strong>Maestro</strong>.</p>
+      </section>
+
+      <section id="source">
+        <h2>Editar la partitura</h2>
+        <p>ABC es la única fuente de verdad. Todo cambio en la música es un cambio en el texto del panel <span class="ui">Código</span>, lo escribas tú o lo haga Maestro por ti.</p>
+        <figure class="clip">
+          <video src="../../help/media/source.mp4" poster="../../help/media/source.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>El panel Código: Editor, Diagnósticos, Historial y la vista XML de solo lectura.</figcaption>
+        </figure>
+        <h3>Editar y aplicar</h3>
+        <ol>
+          <li>Muestra el panel con <span class="ui">Ver ▸ Paneles ▸ Código</span> y quédate en la pestaña <span class="ui">Editor</span>, vista <span class="ui">ABC</span>.</li>
+          <li>Detén la reproducción. El código no se puede editar mientras la partitura suena.</li>
+          <li>Escribe el cambio. El indicador de estado pasa a <span class="ui">Modificado</span>.</li>
+          <li>Pulsa <span class="ui">Aplicar</span>, o <kbd>⌘ Intro</kbd> en macOS y <kbd>Ctrl Intro</kbd> en Windows y Linux. Brano compila el texto y redibuja la partitura.</li>
+        </ol>
+        <p>Los cambios no se compilan mientras escribes, así que un compás a medio escribir nunca rompe la partitura que estás viendo.</p>
+        <h3>Cuando algo está mal</h3>
+        <p>Si el texto no compila, el indicador muestra <span class="ui">No válido</span> y la pestaña <span class="ui">Diagnósticos</span> enumera cada problema. Haz clic en una fila para saltar a esa línea del editor. La partitura sigue mostrando la última versión que compiló.</p>
+        <h3>Historial</h3>
+        <p>La pestaña <span class="ui">Historial</span> lista las revisiones anteriores, registradas cada vez que se guarda la sesión. <span class="ui">Restaurar</span> sustituye el código por esa revisión; el texto que dejas queda en el historial, así que restaurar nunca destruye nada. Con clic derecho en una fila copias su texto.</p>
+        <h3>¿Nuevo en ABC?</h3>
+        <p>Una pieza empieza con unas líneas de cabecera (<code>T:</code> título, <code>M:</code> compás, <code>L:</code> duración por defecto, <code>K:</code> tonalidad), seguidas de las notas. <code>C D E F</code> son notas (do, re, mi, fa), <code>c d e f</code> la octava superior, <code>z</code> un silencio, <code>|</code> una barra de compás, y un número tras una nota multiplica su duración. <span class="ui">Archivo ▸ Nuevo</span> te da una pieza mínima de partida, y el <a href="https://abcnotation.com/learn">sitio de la notación ABC</a> tiene tutoriales (en inglés). Maestro también puede escribir o explicarte ABC.</p>
+      </section>
+
+      <section id="files">
+        <h2>Archivos y sesiones</h2>
+        <ul>
+          <li><span class="ui">Archivo ▸ Abrir…</span> acepta <code>.brn</code>, <code>.abc</code>, <code>.xml</code>, <code>.musicxml</code> y <code>.mxl</code>. No hay una orden de importación aparte: abrir un archivo ABC o MusicXML lo importa. MusicXML se convierte a ABC editable cuando es posible. El archivo original nunca se modifica.</li>
+          <li><span class="ui">Archivo ▸ Guardar</span> y <span class="ui">Guardar como…</span> escriben una sesión <code>.brn</code>: el código y su historial, instrumentos, efectos, mezclador, ajustes de Interpretar, tempo de reproducción y conversaciones con Maestro.</li>
+          <li><span class="ui">Archivo ▸ Abrir reciente</span> conserva los diez últimos archivos.</li>
+          <li>No hay guardado automático. Un punto junto al logotipo señala cambios sin guardar, y Brano pregunta antes de cerrar una sesión que los tenga.</li>
+        </ul>
+      </section>
+
+      <section id="instruments">
+        <h2>Instrumentos y efectos</h2>
+        <p>Cada parte empieza con un sonido General MIDI integrado, así que una partitura nueva suena sin configurar nada. Puedes sustituir cualquier parte por un instrumento plug-in.</p>
+        <h3>Elegir un instrumento</h3>
+        <ol>
+          <li>Abre <span class="ui">Ver ▸ Instrumentos…</span>, o haz clic en el botón de fuente de sonido de la cabecera de una parte en Estudio.</li>
+          <li>Abre el menú de la parte, busca y elige un programa General MIDI o un plug-in.</li>
+          <li>Con <span class="ui">Abrir editor nativo</span> abres la ventana propia del plug-in para elegir allí un sonido.</li>
+        </ol>
+        <p>Brano aloja instrumentos <strong>VST3</strong> en todas las plataformas y <strong>Audio Units (AUv2)</strong> en macOS. La primera vez, ejecuta <span class="ui">Analizar plug-ins</span> en <span class="ui">Ajustes ▸ Plug-ins</span>. En esa misma página puedes ocultar plug-ins de los selectores y, en macOS, elegir el formato preferido cuando un producto está instalado en ambos.</p>
+        <div class="note info"><p>Cada plug-in se ejecuta en su propio proceso. Si uno falla, la parte muestra el fallo con un botón para reintentar y el resto de la sesión sigue funcionando.</p></div>
+        <h3>Efectos</h3>
+        <p>En el Mezclador, haz clic en <span class="ui">+ FX</span> en una parte o en el máster para gestionar su cadena de efectos: añadir, reordenar, desactivar, quitar o abrir el editor de un efecto. Los efectos de parte van antes del volumen y el panorama de la parte. Los efectos del máster van después del volumen del máster.</p>
+        <h3>Congelar</h3>
+        <p>El botón del copo de nieve de una parte la renderiza a audio una vez y reproduce ese render, lo que ahorra CPU con instrumentos pesados. Haz clic otra vez para volver al instrumento en vivo. <span class="ui">Congelar todo</span>, en el canal máster, lo hace con todas las partes que lo admiten.</p>
+        <h3>Bancos</h3>
+        <p>Un banco permite que un solo plug-in multitímbrico (Kontakt, EastWest Opus, HALion, ARIA Player) toque varias partes, cada una en su canal MIDI. Se configura en <span class="ui">Ver ▸ Bancos…</span> con <span class="ui">Agrupar en banco…</span>. Brano no puede ver el interior del plug-in, así que ajusta allí el canal MIDI de cada instrumento para que coincida con la tabla de canales del diálogo.</p>
+        <h3>Salida de audio</h3>
+        <p><span class="ui">Ajustes ▸ Audio</span> elige el dispositivo de salida, la frecuencia de muestreo, los canales y el tamaño de búfer. Si el punto de estado dice <span class="ui">Sin audio</span>, lo más probable es que el dispositivo guardado esté desconectado: elige la opción automática (predeterminado del sistema) y aplica.</p>
+      </section>
+
+      <section id="perform">
+        <h2>Interpretar</h2>
+        <p>Brano no reproduce las notas de forma mecánica. La pestaña <span class="ui">Interpretar</span> decide cuánta interpretación se añade a lo escrito.</p>
+        <figure class="clip">
+          <video src="../../help/media/perform.mp4" poster="../../help/media/perform.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>Elegir un estilo y bajar la expresión.</figcaption>
+        </figure>
+        <ul>
+          <li><strong>Estilo:</strong> predeterminado, medieval, renacimiento, barroco, clásico, romántico, pop/rock, jazz/swing y Pianista IA. Pianista IA necesita un complemento opcional de <span class="ui">Ajustes ▸ Complementos</span>; hasta instalarlo suena como el predeterminado.</li>
+          <li><strong>Carácter («Feel»):</strong> <span class="ui">Expression</span> va del 0 % (las notas tal como están escritas) al 100 % (el estilo completo). <span class="ui">Cantidad de swing</span> fija cuánto se retrasan los contratiempos. <span class="ui">Style preset</span> devuelve ambos al 100 %.</li>
+          <li><strong>Interpretación:</strong> activa o desactiva Dinámicas, Acentos, Articulación, Pedal y Fluctuación.</li>
+          <li><strong>Tiempo y fraseo:</strong> Ritardando, Arco de frase, Microtiempo y Sensación de swing.</li>
+        </ul>
+        <p>Pasa el puntero sobre cualquier control para ver una descripción de una línea. Estos ajustes se guardan en la sesión, y la exportación MIDI puede usarlos (humanizado) o ignorarlos (<span class="ui">Plano</span>).</p>
+      </section>
+
+      <section id="maestro">
+        <h2>Maestro</h2>
+        <p>Maestro es el asistente de IA del panel derecho. Lee la notación misma, así que puede explicar la armonía, comprobar la conducción de voces, revisar la partitura antes de exportarla y hacer cambios en el ABC cuando se lo pides.</p>
+        <p>Maestro está <strong>desactivado hasta que lo conectas a un proveedor de IA</strong>. Brano no incluye un modelo ni vende uso de IA: tú aportas tu propia clave de API, o ejecutas un modelo en tu ordenador.</p>
+        <h3>Configurarlo</h3>
+        <figure class="clip">
+          <video src="../../help/media/maestro.mp4" poster="../../help/media/maestro.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>Ajustes ▸ Maestro: elige un proveedor y la dirección y el modelo se rellenan solos.</figcaption>
+        </figure>
+        <ol>
+          <li>Abre <span class="ui">Ajustes…</span> (<kbd>⌘ ,</kbd> o <kbd>Ctrl ,</kbd>) y elige <span class="ui">Maestro</span>. Hacer clic en la insignia del proveedor, en la cabecera del panel Maestro, lleva al mismo sitio.</li>
+          <li>En <span class="ui">Servidor</span> elige <span class="ui">Compatible con OpenAI</span>, o <span class="ui">Anthropic</span> si tienes una clave de API de Claude.</li>
+          <li>Elige un <span class="ui">Proveedor</span>. La dirección y un modelo recomendado se rellenan. Consulta <a href="#providers">proveedores de IA económicos</a> para decidir cuál.</li>
+          <li>Haz clic en <span class="ui">Obtener una clave de API →</span>. Abre la página del proveedor donde se crea la clave. Cópiala y pégala en <span class="ui">Clave de API</span>.</li>
+          <li>Pulsa <span class="ui">Probar</span> para enviar una petición breve y después <span class="ui">Aplicar</span>.</li>
+        </ol>
+        <p>La línea de estado del panel Maestro debería decir ahora «Escuchando tu partitura». Si muestra «Revisa la configuración de Maestro», pulsa <span class="ui">Detalles</span> para leer el mensaje del proveedor y <span class="ui">Configurar</span> para volver a los ajustes.</p>
+        <h3>Preguntar</h3>
+        <p>Escribe en <span class="ui">Pregunta a Maestro…</span> y pulsa <kbd>Intro</kbd> (<kbd>Mayús Intro</kbd> para una línea nueva). Algunas ideas:</p>
+        <ul>
+          <li>«Explica la armonía de los compases 1 a 8.»</li>
+          <li>«Comprueba la conducción de voces entre la voz y la mano izquierda del piano.»</li>
+          <li>«Revisa la partitura antes de exportarla.»</li>
+          <li>«Transporta toda la pieza una segunda mayor descendente.»</li>
+          <li>«Añade una introducción de cuatro compases para el piano.»</li>
+        </ul>
+        <p>Maestro responde en el idioma de la interfaz salvo que elijas otro en <span class="ui">Idioma de respuesta</span>. Las letras, los títulos y el ABC nunca se traducen.</p>
+        <h3>Cuando Maestro cambia la partitura</h3>
+        <p>Maestro edita el ABC mediante herramientas con comprobación: cada cambio debe compilar antes de aceptarse. La respuesta muestra las diferencias con dos botones: <span class="ui">Conservar</span> y <span class="ui">Revertir</span>. Además, todas las versiones anteriores están en <span class="ui">Código ▸ Historial</span>. Maestro cambia instrumentos o propone el cableado de bancos solo cuando se lo pides, y los cambios de cableado esperan tu aprobación.</p>
+        <h3>Opciones que conviene conocer</h3>
+        <ul>
+          <li><strong>Búsqueda web</strong> y <strong>Entrada de imágenes</strong> están desactivadas por defecto y solo disponibles con los proveedores que las admiten. Con la entrada de imágenes activada, pega o suelta un PNG o JPEG en el mensaje, por ejemplo la foto de una partitura impresa.</li>
+          <li><strong>Presupuesto por sesión:</strong> marca <span class="ui">Limitar gasto</span> para dejar de enviar peticiones cuando la sesión haya costado una cantidad fijada.</li>
+          <li><strong>Actualizar modelos</strong> pide al proveedor su lista actual de modelos. <span class="ui">Id de modelo personalizado…</span> permite escribir un modelo que no aparece en la lista.</li>
+          <li><strong>Chats</strong>, en la cabecera de Maestro, inicia una conversación nueva o vuelve a una anterior. Las conversaciones se guardan en el archivo de sesión.</li>
+        </ul>
+        <h3>Privacidad y tu clave</h3>
+        <ul>
+          <li>Cuando envías un mensaje, el ABC de la partitura y tu conversación van al proveedor que elegiste, y a ningún otro sitio. No se envía nada mientras Maestro está inactivo o sin configurar.</li>
+          <li>Para que todo se quede en tu ordenador, usa el proveedor <span class="ui">Ollama (local, keyless)</span>.</li>
+          <li>Tu clave de API se guarda en tu ordenador, en la carpeta de ajustes de Brano, en el archivo <code>maestro.json</code>, como texto sin cifrar. Trata ese archivo como una contraseña: no lo compartas y, si una clave se filtra, revócala en el sitio del proveedor.</li>
+        </ul>
+      </section>
+
+      <section id="providers">
+        <h2>Proveedores de IA económicos</h2>
+        <p>Maestro funciona con cualquiera de los proveedores siguientes. Una pregunta típica sobre una partitura cuesta una fracción de céntimo con los modelos baratos, y varios proveedores tienen un nivel gratuito suficiente para probar Maestro.</p>
+        <p>Maestro necesita un modelo con <strong>llamada a herramientas</strong> (tool calling) y <strong>streaming</strong>. Una ventana de contexto grande ayuda con partituras largas. Los modelos que sugiere cada proveedor predefinido cumplen esos requisitos.</p>
+        <div class="note"><p>Los precios están en dólares estadounidenses por millón de tokens (entrada / salida), según lo publicado en noviembre de 2026. Cambian a menudo, y los niveles gratuitos tienen límites de uso. Comprueba siempre la página de precios del proveedor, enlazada en la tabla. Brano no tiene relación comercial con ninguno de estos proveedores.</p></div>
+
+        <h3>Pago por uso</h3>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Proveedor</th><th>Modelo en Brano</th><th>Precio entrada / salida</th><th>Enlaces</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Moonshot AI (Kimi)</strong><br><span class="tag pick">Mejores resultados</span></td>
+              <td>Kimi K3, contexto de 1M</td>
+              <td class="num">unos $3 / $15</td>
+              <td><a href="https://platform.kimi.ai/console/api-keys">Obtener clave</a> · <a href="https://platform.kimi.ai/docs/pricing">Precios</a></td>
+            </tr>
+            <tr>
+              <td><strong>Z.ai (GLM)</strong><br><span class="tag pick">Mejor relación</span></td>
+              <td>GLM-5.3-Flash, contexto de 1M<br>GLM-5.3 (insignia)</td>
+              <td class="num">$0,15 / $0,50<br>$1,40 / $4,40</td>
+              <td><a href="https://z.ai/manage-apikey/apikey-list">Obtener clave</a> · <a href="https://docs.z.ai/guides/overview/pricing">Precios</a></td>
+            </tr>
+            <tr>
+              <td><strong>Xiaomi MiMo</strong></td>
+              <td>MiMo-V2.6-Flash, contexto de 1M<br>MiMo-V2.6-Pro (insignia)</td>
+              <td class="num">unos $0,14 / $0,28<br>unos $0,44 / $0,87</td>
+              <td><a href="https://platform.xiaomimimo.com/#/console/api-keys">Obtener clave</a> · <a href="https://mimo.mi.com/docs/en-US/quick-start/summary/model">Modelos y precios</a></td>
+            </tr>
+            <tr>
+              <td><strong>DeepSeek</strong><br><span class="tag">Custom endpoint</span></td>
+              <td><code>deepseek-flash</code>, contexto de 1M</td>
+              <td class="num">de $0,15 a $0,30 / de $0,60 a $1,20<br>(horas valle a horas punta)</td>
+              <td><a href="https://platform.deepseek.com/api_keys">Obtener clave</a> · <a href="https://api-docs.deepseek.com/quick_start/pricing">Precios</a></td>
+            </tr>
+            <tr>
+              <td><strong>OpenRouter</strong></td>
+              <td>Kimi K3 por defecto; cientos de modelos más con una sola clave</td>
+              <td class="num">según el modelo</td>
+              <td><a href="https://openrouter.ai/keys">Obtener clave</a> · <a href="https://openrouter.ai/models">Modelos y precios</a></td>
+            </tr>
+          </tbody>
+        </table></div>
+        <ul>
+          <li><strong>Kimi K3</strong> da muy buenas respuestas sobre música y lee de una vez una partitura larga entera. También es el más caro de la lista. Úsalo cuando importe la calidad del análisis.</li>
+          <li><strong>GLM-5.3-Flash</strong> y <strong>MiMo-V2.6-Flash</strong> cuestan entre veinte y cincuenta veces menos por token que Kimi K3 y bastan para preguntas cotidianas y cambios pequeños.</li>
+          <li><strong>DeepSeek</strong> no tiene proveedor predefinido, así que no es una combinación que probemos en cada versión. Elige <span class="ui">Custom endpoint</span>, pon en <span class="ui">URL base</span> <code>https://api.deepseek.com</code>, pega tu clave y escribe el id de modelo <code>deepseek-flash</code>. Cualquier otro servicio compatible con OpenAI se conecta igual.</li>
+          <li>Con Xiaomi MiMo, usa una clave de API de pago por uso (empieza por <code>sk-</code>).</li>
+        </ul>
+
+        <h3>Gratis para empezar</h3>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Proveedor</th><th>Modelo en Brano</th><th>Qué es gratis</th><th>Enlaces</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Groq</strong> <span class="tag free">Nivel gratuito</span></td>
+              <td>GPT-OSS 120B, contexto de 128K</td>
+              <td>Uso gratuito con límites, sin tarjeta. De pago, unos $0,15 / $0,60.</td>
+              <td><a href="https://console.groq.com/keys">Obtener clave</a> · <a href="https://console.groq.com/docs/rate-limits">Límites</a></td>
+            </tr>
+            <tr>
+              <td><strong>Cerebras</strong> <span class="tag free">Nivel gratuito</span></td>
+              <td>GPT-OSS 120B, contexto de 128K</td>
+              <td>Una cuota gratuita de tokens. Respuestas muy rápidas.</td>
+              <td><a href="https://cloud.cerebras.ai">Obtener clave</a> · <a href="https://inference-docs.cerebras.ai/support/rate-limits">Límites</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google Gemini</strong> <span class="tag free">Nivel gratuito</span></td>
+              <td>Gemini 3.8 Flash, contexto de 1M</td>
+              <td>Uso gratuito de los modelos Flash dentro de los límites que muestra AI Studio.</td>
+              <td><a href="https://aistudio.google.com/apikey">Obtener clave</a> · <a href="https://ai.google.dev/gemini-api/docs/pricing">Precios</a></td>
+            </tr>
+            <tr>
+              <td><strong>Mistral</strong> <span class="tag free">Nivel gratuito</span></td>
+              <td>Mistral Large 3, contexto de 256K</td>
+              <td>Un modo gratuito para pruebas, con límites bajos.</td>
+              <td><a href="https://console.mistral.ai/api-keys">Obtener clave</a> · <a href="https://mistral.ai/pricing">Precios</a></td>
+            </tr>
+            <tr>
+              <td><strong>OpenRouter</strong> <span class="tag free">Modelos gratuitos</span></td>
+              <td>Cualquier modelo cuyo id termine en <code>:free</code></td>
+              <td>Un número diario de peticiones gratuitas; más tras una primera recarga.</td>
+              <td><a href="https://openrouter.ai/keys">Obtener clave</a> · <a href="https://openrouter.ai/models?max_price=0">Modelos gratuitos</a></td>
+            </tr>
+            <tr>
+              <td><strong>Ollama</strong> <span class="tag free">Local</span></td>
+              <td>Llama 3.3 o cualquier modelo que descargues</td>
+              <td>Todo. Se ejecuta en tu ordenador; sin clave, sin cuenta, nada sale de la máquina. Requiere una GPU capaz o Apple Silicon y bastante memoria.</td>
+              <td><a href="https://ollama.com/download">Descargar</a></td>
+            </tr>
+          </tbody>
+        </table></div>
+        <div class="note info"><p>Algunos niveles gratuitos pueden usar tus mensajes para mejorar sus modelos. Si tu partitura es obra inédita, lee antes la política de datos del proveedor, usa un nivel de pago o ejecuta un modelo local con Ollama.</p></div>
+        <h3>Para que la factura sea pequeña</h3>
+        <ul>
+          <li>Marca <span class="ui">Limitar gasto</span> en el presupuesto por sesión. Las peticiones se detienen cuando la sesión alcanza la cantidad.</li>
+          <li>Empieza un <span class="ui">Nuevo chat</span> para cada tema nuevo. Una conversación larga se reenvía entera con cada mensaje.</li>
+          <li>Usa un modelo Flash para las preguntas cotidianas y pasa a un modelo insignia para una revisión completa.</li>
+          <li>Donde aparezca el interruptor <span class="ui">Razonamiento</span>, desactivarlo hace las respuestas más rápidas y baratas.</li>
+          <li>Deja <span class="ui">Búsqueda web</span> desactivada salvo que la necesites; los proveedores cobran por cada búsqueda.</li>
+        </ul>
+      </section>
+
+      <section id="export">
+        <h2>Exportar</h2>
+        <figure class="clip">
+          <video src="../../help/media/export.mp4" poster="../../help/media/export.webp" width="1280" height="800" autoplay loop muted playsinline></video>
+          <figcaption>Archivo ▸ Exportar… y la lista de formatos. Cada formato muestra sus propias opciones.</figcaption>
+        </figure>
+        <p>Abre <span class="ui">Archivo ▸ Exportar…</span> (<kbd>⌘ E</kbd> o <kbd>Ctrl E</kbd>), elige un formato, pulsa <span class="ui">Exportar…</span> y elige dónde guardar.</p>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Formato</th><th>Qué obtienes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>PDF</strong></td><td>Un PDF de varias páginas con la partitura grabada.</td></tr>
+            <tr><td><strong>SVG</strong></td><td>Un SVG por página. Las partituras de varias páginas se guardan como .zip.</td></tr>
+            <tr><td><strong>PNG</strong></td><td>Imágenes de página a 1×, 2× o 3×. Las partituras de varias páginas se guardan como .zip.</td></tr>
+            <tr><td><strong>TIFF</strong></td><td>La página actual, o todas las páginas en un TIFF multipágina, a 1×, 2× o 3×.</td></tr>
+            <tr><td><strong>MusicXML</strong></td><td>La partitura compilada, para otros programas de notación.</td></tr>
+            <tr><td><strong>ABC</strong></td><td>El texto actual del código.</td></tr>
+            <tr><td><strong>MIDI</strong></td><td>Humanizado (con los ajustes actuales de Interpretar) o plano (exactamente como está escrito).</td></tr>
+            <tr><td><strong>WAV, FLAC</strong></td><td>Un volcado de audio a 44,1 kHz, 16 bits, estéreo: un archivo mezclado, o pistas con un archivo por parte.</td></tr>
+          </tbody>
+        </table></div>
+        <p>El audio respeta tus instrumentos, efectos y mezclador. Las pistas por parte conservan el nivel y el panorama de cada una, ignoran silenciar y solo, y no incluyen los efectos del máster. El tamaño de papel, los saltos de página y el tamaño de notación de los formatos de página se ajustan en <span class="ui">Propiedades</span>, en la vista Página.</p>
+      </section>
+
+      <section id="shortcuts">
+        <h2>Teclado y ratón</h2>
+        <p>En Windows y Linux usa <kbd>Ctrl</kbd> donde la tabla dice <kbd>⌘</kbd>.</p>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Acción</th><th>Atajo</th></tr></thead>
+          <tbody>
+            <tr><td>Reproducir / pausar</td><td><kbd>Espacio</kbd></td></tr>
+            <tr><td>Aplicar los cambios del código</td><td><kbd>⌘ Intro</kbd></td></tr>
+            <tr><td>Enviar a Maestro / línea nueva</td><td><kbd>Intro</kbd> / <kbd>Mayús Intro</kbd></td></tr>
+            <tr><td>Nuevo, Abrir</td><td><kbd>⌘ N</kbd>, <kbd>⌘ O</kbd></td></tr>
+            <tr><td>Guardar, Guardar como</td><td><kbd>⌘ S</kbd>, <kbd>Mayús ⌘ S</kbd></td></tr>
+            <tr><td>Exportar</td><td><kbd>⌘ E</kbd></td></tr>
+            <tr><td>Ajustes</td><td><kbd>⌘ ,</kbd></td></tr>
+            <tr><td>Acercar, alejar, tamaño real</td><td><kbd>⌘ =</kbd>, <kbd>⌘ -</kbd>, <kbd>⌘ 0</kbd></td></tr>
+            <tr><td>Cerrar ventana (macOS)</td><td><kbd>⌘ W</kbd></td></tr>
+          </tbody>
+        </table></div>
+        <h3>En la vista Estudio</h3>
+        <ul>
+          <li>Haz clic en la regla o en un carril para mover el cursor de reproducción.</li>
+          <li><kbd>⌘</kbd> + rueda, o pellizcar en un trackpad, hace zoom sin perder tu posición en la música.</li>
+          <li>La rueda desplaza en vertical; <kbd>Mayús</kbd> + rueda, en horizontal. Con dos dedos te desplazas en un trackpad.</li>
+          <li>Clic derecho en la partitura para zoom, tamaño real y <span class="ui">Ajustar altura</span>.</li>
+          <li>Clic derecho en una parte para silenciar, solo y congelar.</li>
+        </ul>
+        <h3>En la vista Página</h3>
+        <ul>
+          <li>Desplaza o arrastra para moverte por la página.</li>
+          <li>Haz zoom con el menú Ver, o elige <span class="ui">Ajustar al ancho</span> o <span class="ui">Ajustar a la página</span> en Propiedades.</li>
+        </ul>
+      </section>
+
+      <section id="settings">
+        <h2>Ajustes</h2>
+        <p><span class="ui">Ajustes…</span> tiene cinco páginas: General, Audio, Plug-ins, Maestro y Complementos.</p>
+        <ul>
+          <li><strong>Tema:</strong> Studio Dark, Graphite y Midnight son oscuros; Yelcho y Platinum son claros. También en <span class="ui">Ver ▸ Tema</span>.</li>
+          <li><strong>Idioma:</strong> English o Español. También en <span class="ui">Ver ▸ Idioma</span>.</li>
+          <li><strong>Reducir movimiento</strong> detiene pulsos y fundidos.</li>
+          <li><strong>Mostrar diagnósticos del motor</strong> añade detalles técnicos a la barra de estado, útiles al informar de un problema.</li>
+        </ul>
+        <h3>Dónde guarda Brano sus ajustes</h3>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Sistema</th><th>Carpeta</th></tr></thead>
+          <tbody>
+            <tr><td>macOS</td><td><code>~/Library/Application Support/brano</code></td></tr>
+            <tr><td>Windows</td><td><code>%APPDATA%\brano</code></td></tr>
+            <tr><td>Linux</td><td><code>~/.config/brano</code></td></tr>
+          </tbody>
+        </table></div>
+        <p>La carpeta contiene pequeños archivos JSON como <code>ui.json</code> (tema e idioma), <code>layout.json</code> (paneles), <code>audio.json</code> y <code>maestro.json</code> (proveedor, modelo y clave de API). Tu música no está ahí: vive en los archivos <code>.brn</code> que guardas.</p>
+      </section>
+
+      <section id="trouble">
+        <h2>Solución de problemas</h2>
+        <h3>No suena nada</h3>
+        <ul>
+          <li>Mira el punto de Audio, arriba a la derecha. Si dice <span class="ui">Sin audio</span>, abre <span class="ui">Ajustes ▸ Audio</span>, elige la opción automática (predeterminado del sistema) o un dispositivo conectado, y aplica.</li>
+          <li>Comprueba el fader Máster, y que no haya una parte silenciada mientras otra está en solo.</li>
+          <li>Un instrumento plug-in puede cargarse sin ningún sonido seleccionado. Abre su editor y carga uno. Brano avisa de una parte en silencio en lugar de sustituirla por un sonido General MIDI.</li>
+        </ul>
+        <h3>Falta un plug-in o falla una y otra vez</h3>
+        <ul>
+          <li>Ejecuta <span class="ui">Reanalizar</span> en <span class="ui">Ajustes ▸ Plug-ins</span>. Los plug-ins que fallaron en el análisis aparecen en «Omitidos o incompatibles» y se pueden reintentar.</li>
+          <li>Una parte o un efecto con fallo muestra un botón para reintentar. El resto de la sesión no se ve afectado.</li>
+        </ul>
+        <h3>Maestro no responde</h3>
+        <ul>
+          <li>«Revisa la configuración de Maestro»: aún no hay proveedor configurado, o la clave fue rechazada. Pulsa <span class="ui">Configurar</span> y sigue <a href="#maestro">Configurarlo</a>.</li>
+          <li>Si la respuesta falló, pulsa <span class="ui">Detalles</span> para ver el mensaje del proveedor. Las causas habituales son una clave caducada, saldo agotado, un límite del nivel gratuito o un nombre de modelo que el proveedor ha retirado. <span class="ui">Actualizar modelos</span> obtiene la lista actual.</li>
+          <li>Con Ollama, comprueba que la aplicación Ollama esté en marcha y que hayas descargado el modelo indicado en los ajustes.</li>
+        </ul>
+        <h3>Mi cambio no se aplica</h3>
+        <ul>
+          <li>Detén antes la reproducción y comprueba que el panel Código esté en la vista <span class="ui">ABC</span>. La vista XML es de solo lectura.</li>
+          <li>Si el indicador dice <span class="ui">No válido</span>, abre <span class="ui">Diagnósticos</span> y corrige las líneas indicadas.</li>
+        </ul>
+        <h3>¿Sigues atascado?</h3>
+        <p>Escribe a <a href="mailto:support@onpu.dev">support@onpu.dev</a> indicando tu sistema operativo, la versión de Brano que aparece en la ventana «Acerca de» y qué estabas haciendo. Las notas de versión están en la <a href="https://github.com/ro-ag/brano/releases">página de versiones</a>.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Onpu. Brano es una marca de su autor. VST es una marca de Steinberg Media Technologies GmbH. Los demás nombres de productos pertenecen a sus propietarios.</span>
+      <span><a href="mailto:support@onpu.dev">Soporte</a> · <a href="https://onpu.dev/privacy.html">Política de privacidad</a> · <a href="../">Brano</a> · <a href="https://onpu.dev/">Onpu</a></span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* Brano help pages. Builds on ../brano.css (tokens, .wrap, .nav, footer). */
+html { scroll-padding-top: 1.5rem; }
+.help-head { border-bottom: 1px solid var(--rule); background: linear-gradient(var(--ink-2), var(--ink)); }
+.help-head .title { padding: 1.5rem 0 2.25rem; }
+.help-head h1 { font-size: clamp(1.9rem, 4vw, 2.7rem); letter-spacing: -0.025em; line-height: 1.1; margin: 0 0 0.5rem; font-weight: 650; }
+.help-head p { color: var(--muted); margin: 0; max-width: 44rem; }
+
+.layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; padding-top: 2.5rem; padding-bottom: 4rem; }
+.toc { position: sticky; top: 1.5rem; align-self: start; max-height: calc(100vh - 3rem); overflow-y: auto; font-size: 0.92rem; }
+.toc p { color: var(--blue-hi); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 0.6rem; }
+.toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--rule); }
+.toc a { display: block; padding: 0.28rem 0 0.28rem 0.9rem; color: var(--muted); text-decoration: none; margin-left: -1px; border-left: 1px solid transparent; }
+.toc a:hover { color: var(--paper); border-left-color: var(--blue-hi); }
+
+.doc { max-width: 48rem; min-width: 0; }
+.doc section { padding-bottom: 2.75rem; margin-bottom: 2.75rem; border-bottom: 1px solid var(--rule); }
+.doc section:last-child { border-bottom: 0; margin-bottom: 0; }
+.doc h2 { font-size: 1.65rem; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 0.9rem; font-weight: 650; }
+.doc h3 { font-size: 1.1rem; margin: 1.9rem 0 0.5rem; }
+.doc p, .doc li { color: #c3ccd7; }
+.doc p { margin: 0 0 0.9rem; }
+.doc ul, .doc ol { padding-left: 1.3rem; margin: 0 0 1rem; }
+.doc li + li { margin-top: 0.35rem; }
+.doc strong { color: var(--paper); font-weight: 600; }
+.doc code { font: 0.88em ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace; background: var(--ink-3); border: 1px solid var(--rule); border-radius: 0.3rem; padding: 0.08em 0.35em; color: var(--paper); overflow-wrap: anywhere; }
+kbd { font: 0.82em ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace; background: var(--ink-3); border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 0.35rem; padding: 0.1em 0.45em; color: var(--paper); white-space: nowrap; }
+.ui { color: var(--paper); font-weight: 600; white-space: nowrap; }
+
+figure.clip { margin: 1.4rem 0 1.6rem; }
+figure.clip video { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 0.6rem; background: var(--ink-2); box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.45); }
+figure.clip figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 0.6rem; }
+
+.note { border: 1px solid var(--rule); border-left: 3px solid var(--gold); border-radius: 0.5rem; background: var(--ink-2); padding: 0.85rem 1rem; margin: 1.2rem 0; }
+.note p { margin: 0; font-size: 0.95rem; }
+.note p + p { margin-top: 0.5rem; }
+.note.info { border-left-color: var(--blue-hi); }
+
+.tablewrap { overflow-x: auto; margin: 1.1rem 0 1.3rem; border: 1px solid var(--rule); border-radius: 0.6rem; }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+th, td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--rule); vertical-align: top; color: #c3ccd7; }
+th { color: var(--muted); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; background: var(--ink-2); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 999px; padding: 0.05rem 0.5rem; color: var(--muted); white-space: nowrap; }
+.tag.free { color: #7fd6a4; border-color: #2f5f47; }
+.tag.pick { color: var(--gold); border-color: #6b5622; }
+
+@media (max-width: 60rem) {
+  .layout { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 1.5rem; }
+  .toc { position: static; max-height: none; border: 1px solid var(--rule); border-radius: 0.6rem; padding: 1rem 1.1rem; background: var(--ink-2); }
+  .toc ol { border-left: 0; columns: 2; column-gap: 1.5rem; }
+  .toc a { padding-left: 0; }
+}
+@media (max-width: 32rem) { .toc ol { columns: 1; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
