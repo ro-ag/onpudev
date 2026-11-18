@@ -1,0 +1,23 @@
+.notes { padding: 1rem 0 4rem; }
+.notes .wrap { max-width: 52rem; }
+.notes h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; margin: 1.5rem 0 0.6rem; font-weight: 650; }
+.notes .lede { margin: 0 0 1rem; max-width: 46rem; }
+.notes .lede a { color: var(--paper); }
+.release { border-top: 1px solid var(--rule); padding: 1.6rem 0 0.4rem; scroll-margin-top: 1rem; }
+.release h2 {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 0.8rem;
+  font-size: 1.45rem; letter-spacing: -0.01em; margin: 0 0 0.6rem;
+}
+.release h2 a { color: var(--paper); text-decoration: none; }
+.release h2 a:hover { text-decoration: underline; }
+.release h2 time { color: var(--muted); font-size: 0.9rem; font-weight: 400; margin-left: auto; font-variant-numeric: tabular-nums; }
+.release h2 .badge { margin: 0; align-self: center; }
+.release h3 { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 1.3rem 0 0.4rem; }
+.release p, .release li { color: var(--muted); line-height: 1.6; }
+.release p { margin: 0 0 0.8rem; }
+.release ul { margin: 0 0 0.8rem; padding-left: 1.2rem; }
+.release li { margin: 0 0 0.45rem; overflow-wrap: anywhere; }
+.release code {
+  font: 0.85em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--paper);
+  background: var(--ink-3); border-radius: 0.3rem; padding: 0.08em 0.35em;
+}
