@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Descargar Brano · Windows, macOS y Linux</title>
+  <meta name="description" content="Descarga la beta actual de Brano para Windows, macOS (Apple Silicon) y Linux x64, con tamaños de archivo y sumas SHA-256.">
+  <meta name="theme-color" content="#111820">
+  <meta property="og:title" content="Descargar Brano · Windows, macOS y Linux">
+  <meta property="og:description" content="Descarga la beta actual de Brano para Windows, macOS (Apple Silicon) y Linux x64, con tamaños de archivo y sumas SHA-256.">
+  <meta property="og:image" content="https://onpu.dev/brano/img/brano-hero.webp">
+  <meta property="og:url" content="https://onpu.dev/brano/es/download/">
+  <link rel="alternate" hreflang="en" href="https://onpu.dev/brano/download/">
+  <link rel="alternate" hreflang="es" href="https://onpu.dev/brano/es/download/">
+  <link rel="icon" type="image/svg+xml" href="../../img/brano-icon.svg">
+  <link rel="stylesheet" href="../../brano.css">
+  <link rel="stylesheet" href="../../download/download.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav class="nav">
+        <a href="../"><img src="../../img/brano-lockup.svg" width="125" height="32" alt="Brano"></a>
+        <ul>
+          <li><a href="../">Brano</a></li>
+          <li><a href="../help/">Ayuda</a></li>
+          <li><a href="../../download/" hreflang="en">English</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="downloads">
+    <div class="wrap">
+      <span class="badge">Beta</span>
+      <h1>Descargar Brano</h1>
+      <p class="lede">Versión actual: <span class="release">Brano <span data-version>beta</span></span>. Brano es gratuito mientras esté en beta.</p>
+      <div class="files">
+        <div class="file">
+          <div>
+            <h3>Windows</h3>
+            <p class="req">Windows 10 y 11, x64. Microsoft Store lo instala y lo actualiza.</p>
+          </div>
+          <a class="btn primary" href="https://apps.microsoft.com/detail/9n48c2ch9b61">Obtener en Microsoft Store</a>
+        </div>
+        <div class="file" data-file="macos_arm64">
+          <div>
+            <h3>macOS</h3>
+            <p class="req">macOS 12 o posterior, Apple Silicon. Imagen de disco firmada y notarizada.</p>
+          </div>
+          <a class="btn primary" href="https://downloads.onpu.dev/brano/latest/Brano_arm64.dmg">Descargar .dmg</a>
+          <p class="meta" hidden>Archivo: <code data-name></code> · Tamaño: <span data-size></span><br>SHA-256: <code data-sha256></code></p>
+        </div>
+        <div class="file" data-file="linux_x64">
+          <div>
+            <h3>Linux</h3>
+            <p class="req">x64, glibc 2.35 o posterior y ALSA. Binario independiente.</p>
+          </div>
+          <a class="btn primary" href="https://downloads.onpu.dev/brano/latest/Brano_linux_x64.tar.gz">Descargar .tar.gz</a>
+          <p class="meta" hidden>Archivo: <code data-name></code> · Tamaño: <span data-size></span><br>SHA-256: <code data-sha256></code></p>
+        </div>
+      </div>
+
+      <h2>Instalación</h2>
+      <ul>
+        <li><strong>Windows:</strong> instala desde Microsoft Store; las actualizaciones también llegan por ahí.</li>
+        <li><strong>macOS:</strong> abre la imagen de disco y arrastra Brano a Aplicaciones. Los Mac con Intel no son compatibles.</li>
+        <li><strong>Linux:</strong> descomprime el archivo y ejecuta <code>brano</code>. No hay nada que instalar.</li>
+      </ul>
+
+      <h2>Verificar una descarga</h2>
+      <p>Compara la suma SHA-256 que aparece arriba con la del archivo descargado:</p>
+      <pre>shasum -a 256 Brano_*_arm64.dmg
+sha256sum Brano_*_linux_x64.tar.gz</pre>
+      <p>La misma información se publica como <a href="https://downloads.onpu.dev/brano/latest/latest.json">latest.json</a>.</p>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Onpu. Brano es una marca de su autor.</span>
+      <span><a href="../help/">Ayuda</a> · <a href="mailto:support@onpu.dev">Soporte</a> · <a href="https://onpu.dev/privacy.html">Política de privacidad</a> · <a href="https://onpu.dev/">Onpu</a></span>
+    </div>
+  </footer>
+  <script src="../../download/download.js" defer></script>
+</body>
+</html>

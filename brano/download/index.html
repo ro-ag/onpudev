@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download Brano · Windows, macOS and Linux</title>
+  <meta name="description" content="Download the current Brano beta for Windows, macOS (Apple Silicon) and Linux x64, with file sizes and SHA-256 checksums.">
+  <meta name="theme-color" content="#111820">
+  <meta property="og:title" content="Download Brano · Windows, macOS and Linux">
+  <meta property="og:description" content="Download the current Brano beta for Windows, macOS (Apple Silicon) and Linux x64, with file sizes and SHA-256 checksums.">
+  <meta property="og:image" content="https://onpu.dev/brano/img/brano-hero.webp">
+  <meta property="og:url" content="https://onpu.dev/brano/download/">
+  <link rel="alternate" hreflang="en" href="https://onpu.dev/brano/download/">
+  <link rel="alternate" hreflang="es" href="https://onpu.dev/brano/es/download/">
+  <link rel="icon" type="image/svg+xml" href="../img/brano-icon.svg">
+  <link rel="stylesheet" href="../brano.css">
+  <link rel="stylesheet" href="../download/download.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav class="nav">
+        <a href="../"><img src="../img/brano-lockup.svg" width="125" height="32" alt="Brano"></a>
+        <ul>
+          <li><a href="../">Brano</a></li>
+          <li><a href="../help/">Help</a></li>
+          <li><a href="../es/download/" hreflang="es">Español</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="downloads">
+    <div class="wrap">
+      <span class="badge">Beta</span>
+      <h1>Download Brano</h1>
+      <p class="lede">Current release: <span class="release">Brano <span data-version>beta</span></span>. Brano is free while it is in beta.</p>
+      <div class="files">
+        <div class="file">
+          <div>
+            <h3>Windows</h3>
+            <p class="req">Windows 10 and 11, x64. Installed and updated by the Microsoft Store.</p>
+          </div>
+          <a class="btn primary" href="https://apps.microsoft.com/detail/9n48c2ch9b61">Get it from Microsoft Store</a>
+        </div>
+        <div class="file" data-file="macos_arm64">
+          <div>
+            <h3>macOS</h3>
+            <p class="req">macOS 12 or newer, Apple Silicon. Signed and notarized disk image.</p>
+          </div>
+          <a class="btn primary" href="https://downloads.onpu.dev/brano/latest/Brano_arm64.dmg">Download .dmg</a>
+          <p class="meta" hidden>File: <code data-name></code> · Size: <span data-size></span><br>SHA-256: <code data-sha256></code></p>
+        </div>
+        <div class="file" data-file="linux_x64">
+          <div>
+            <h3>Linux</h3>
+            <p class="req">x64, glibc 2.35 or newer and ALSA. Standalone binary.</p>
+          </div>
+          <a class="btn primary" href="https://downloads.onpu.dev/brano/latest/Brano_linux_x64.tar.gz">Download .tar.gz</a>
+          <p class="meta" hidden>File: <code data-name></code> · Size: <span data-size></span><br>SHA-256: <code data-sha256></code></p>
+        </div>
+      </div>
+
+      <h2>Install</h2>
+      <ul>
+        <li><strong>Windows:</strong> install from the Microsoft Store; updates arrive there too.</li>
+        <li><strong>macOS:</strong> open the disk image and drag Brano to Applications. Intel Macs are not supported.</li>
+        <li><strong>Linux:</strong> unpack the archive and run <code>brano</code>. There is nothing to install.</li>
+      </ul>
+
+      <h2>Verify a download</h2>
+      <p>Compare the SHA-256 shown above with the one of the file you downloaded:</p>
+      <pre>shasum -a 256 Brano_*_arm64.dmg
+sha256sum Brano_*_linux_x64.tar.gz</pre>
+      <p>The same information is published as <a href="https://downloads.onpu.dev/brano/latest/latest.json">latest.json</a>.</p>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Onpu. Brano is a trademark of its author.</span>
+      <span><a href="../help/">Help</a> · <a href="mailto:support@onpu.dev">Support</a> · <a href="https://onpu.dev/privacy.html">Privacy policy</a> · <a href="https://onpu.dev/">Onpu</a></span>
+    </div>
+  </footer>
+  <script src="../download/download.js" defer></script>
+</body>
+</html>

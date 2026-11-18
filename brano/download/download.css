@@ -1,0 +1,23 @@
+.downloads { padding: 1rem 0 4rem; }
+.downloads h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; margin: 1.5rem 0 0.6rem; font-weight: 650; }
+.downloads .lede { margin: 0 0 2rem; max-width: 46rem; }
+.downloads h2 { font-size: 1.3rem; letter-spacing: -0.01em; margin: 2.5rem 0 0.8rem; }
+.downloads p, .downloads li { color: var(--muted); }
+.release { color: var(--paper); font-weight: 600; }
+.files { display: grid; gap: 1rem; }
+.file {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.4rem 1.5rem; align-items: center;
+  background: var(--ink-2); border: 1px solid var(--rule); border-radius: 0.75rem; padding: 1.2rem 1.3rem;
+}
+.file h3 { margin: 0; font-size: 1.1rem; }
+.file .req { margin: 0.15rem 0 0; font-size: 0.95rem; }
+.file .meta { grid-column: 1 / -1; margin: 0.4rem 0 0; font-size: 0.85rem; overflow-wrap: anywhere; }
+.file .meta code { font: 0.8rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--paper); }
+.file .btn { white-space: nowrap; }
+.downloads pre {
+  background: var(--ink-2); border: 1px solid var(--rule); border-radius: 0.6rem; padding: 0.8rem 1rem;
+  overflow-x: auto; font: 0.85rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--paper);
+}
+@media (max-width: 40rem) {
+  .file { grid-template-columns: 1fr; }
+}
